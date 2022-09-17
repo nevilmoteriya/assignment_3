@@ -1,0 +1,48 @@
+public class pra_3_4 {
+void sample1(int a , int b)
+{
+System.out.println("In Parent class method "); System.out.println("a+b ="+ (a+b));
+}
+}
+class child extends pra_3_4
+{
+void sample1(int a , int b)
+{
+System.out.println("In child class method "); System.out.println("a-b =" + (a-b));
+
+}
+}
+import java.util.Scanner;
+ 
+
+	public class pra_3_4_main {
+public static void main(String[] args) { Scanner sc = new Scanner(System.in); System.out.print("Enter The First value = "); int a = sc.nextInt();
+System.out.print("Enter The Second value = "); int b = sc.nextInt();
+
+pra_3_4 p4 = new pra_3_4(); p4.sample1(a,b);
+
+child c4 = new child(); c4.sample1(a,b);
+
+}
+}
+package P1;
+import java.util.*;
+
+public class UserDefinedPack{
+
+Scanner sc = new Scanner(System.in); private int a;
+private int b;
+
+public void getdata(){ a = sc.nextInt();
+b = sc.nextInt();
+}
+public int add(){ return a+b;
+}
+
+public static void sub(int a, int b){ int ans = a-b;
+System.out.println("Subtraction of " + a + " and " + b + " is " + ans);
+}
+}
+}
+ 
+
