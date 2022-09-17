@@ -1,0 +1,131 @@
+import java.util.Date;
+abstract class GeometricObject{ String colour ;
+Date dateCreated = new Date(); boolean filled ; GeometricObject(){}
+GeometricObject(String a ,boolean f)
+{
+colour = a; filled = f;
+}
+public String getColour() { return colour;
+}
+public void setColour(String colour) { this.colour = colour;
+}
+public Date getDateCreated() { return dateCreated;
+}
+public void setDateCreated(Date dateCreated) {
+ 
+
+	this.dateCreated = dateCreated;
+}
+public boolean isFilled() { return filled;
+}
+public void setFilled(boolean filled) { this.filled = filled;
+}
+@Override
+public String toString() {
+//	return "The color of The GeometricObject "+ colour + " \n The Created Date is "+dateCreated+ "\n Filled =" +filled ;
+return "color = "+ colour + "\nCreated Date = "+dateCreated+ "\nFilled = "
++filled ;
+}
+abstract double getArea(); abstract double getPerimeter();
+}
+Circle class:	Circle class :
+	public class Circle extends GeometricObject{
+	private double r;
+	Circle(){}
+	Circle(double r)
+	{
+	this.r=r;
+	}
+	Circle(double r , String color , boolean filled)
+	{
+	super(color , filled);
+	this.r=r;
+	}
+	public double getR() {
+	return r;
+	}
+	public void setR(double r) {
+	this.r = r;
+	}
+	public double getD()
+	{
+	return r*2;
+	}
+ 
+
+	
+
+
+
+
+
+
+
+}	public double getArea()
+{
+return 3.14*r*r;
+}
+public double getPerimeter()
+{
+return 2*3.14*r;
+}
+
+	public class Rectangle extends GeometricObject
+	{
+	double h;
+	double w;
+	Rectangle() {}
+	Rectangle(double h ,double w) {
+	this.h = h;
+	this.w = w;
+	}
+	Rectangle(double h ,double w , String color , boolean filled )
+	{
+	super(color , filled);
+	this.h=h;
+	this.w=w;
+	}
+	public double getH() {
+	return h;
+	}
+	public void setH(double h) {
+	this.h = h;
+	}
+	public double getW() {
+	return w;
+	}
+	public void setW(double w) {
+	this.w = w;
+	}
+	public double getArea()
+	{
+	return w*h;
+ 
+
+	}
+public double getPerimeter()
+{
+return 2*(w+h);
+}
+import java.util.Scanner;
+
+public class Package_interface_1_main { public static void main(String[] args) {
+Scanner sc = new Scanner(System.in); System.out.println("Enter Value For Circle --> "); System.out.print("Enter Radius : ");
+double r=sc.nextDouble(); System.out.print("Enter The Colour : "); String color = sc.next();
+System.out.print("Enter The Filled in Form true and false : "); boolean filled = sc.nextBoolean(); System.out.println("\nEnter Value For Rectangle --> "); System.out.print("Enter Height : ");
+double h=sc.nextDouble(); System.out.print("Enter Width : "); double w=sc.nextDouble(); System.out.print("Enter The Colour : "); String color1 = sc.next();
+System.out.print("Enter The Filled in Form true and false : "); boolean filled1 = sc.nextBoolean();
+Circle c =new Circle(r,color,filled);
+Rectangle R = new Rectangle(h , w , color1 ,filled1); System.out.println("\nAnswer For Circle == ");
+System.out.printf("Using Get Area Method with Radius %.4f -- Area =", r); System.out.println(c.getArea());
+System.out.printf("Using Get Perimeter Method with Radius %.4f -- perimeter =",r);
+System.out.println(c.getPerimeter()); System.out.println(c.toString()); System.out.println("\nAnswer For Rectangle == ");
+System.out.printf("Using Get Area Method with Width %.4f , Height %.4f
+-- Area =", w,h );
+System.out.println(R.getArea());
+ 
+
+	System.out.printf("Using Get Perimeter Method with Width %.4f , Height
+%.4f -- perimeter	=", w,h); System.out.println(R.getPerimeter()); System.out.println(R.toString());
+}
+}
