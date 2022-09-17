@@ -1,0 +1,55 @@
+	import java.util.Scanner;
+	interface p
+	{
+	public final int R = 100;
+	int multiply();
+	}
+	interface p1 extends p
+	{
+ 
+
+	public final int R1 = 10; int sum();
+}
+interface p2 extends p
+{
+public final int R2 = 20;
+
+int sub();
+}
+
+interface p12 extends p1 , p2{ public final int R3 = 30;
+int divide();
+}
+public class pra_3_3 implements p12 { private int a,b;
+void get()
+{
+Scanner sc = new Scanner(System.in); System.out.print("Enter The First value = "); a = sc.nextInt();
+System.out.print("Enter The Second value = "); b = sc.nextInt();
+}
+
+public int divide()
+{
+return a/b;
+}
+public int sub()
+{
+return a - b;
+}
+public int sum()
+{
+return a + b;
+}
+public int multiply()
+{
+return a * b;
+}
+ 
+
+	
+}
+public class pra_3_3_main {
+public static void main(String[] args) { pra_3_3 p3 = new pra_3_3(); System.out.println("R =" + p3.R); System.out.println("R1 =" + p3.R1); System.out.println("R2 =" + p3.R2); System.out.println("R3 =" + p3.R3); p3.get();
+System.out.println( "divide = "+ p3.divide()); System.out.println( "sum = "+ p3.sum()); System.out.println( "sub = "+ p3.sub()); System.out.println( "multiply = "+p3.multiply());
+
+}
+}
